@@ -10,6 +10,7 @@ Year In Percent is a lightweight, easy-to-use library that provides the current 
 
 - Calculate the percentage of the current year that has been completed.
 - Lightweight and easy to integrate.
+- Returns a JSON object with the percentage, current date, start of the year, end of the year, total milliseconds in the year, and milliseconds elapsed in the year.
 
 ## Installation
 
@@ -40,19 +41,15 @@ console.log(`Year completion: ${result.percentageCompleted}%`);
 
 #### `getYearCompletionPercentage()`
 
-Returns the percentage of the current year that has been completed as a string formatted to two decimal places.
+Returns a JSON object with the following properties:
+  - `percentageCompleted`: A `string` representing the percentage (e.g., `"75.08"`).
+  - `now`: A `date` object representing the current date and time.
+  - `startOfYear`: A `date` object representing the start of the current year.
+  - `endOfYear`: A `date` object representing the end of the current year.
+  - `totalMillisecondsInYear`: A `number` representing the total milliseconds in the current year.
+  - `millisecondsElapsedInYear`: A `number` representing the milliseconds elapsed since the start of the year.
 
-**Returns:**
-
-- A JSON object with the following properties:
-  - `percentageCompleted`: A string representing the percentage (e.g., `"50.00"`).
-  - `now`: A `Date` object representing the current date and time.
-  - `startOfYear`: A `Date` object representing the start of the current year.
-  - `endOfYear`: A `Date` object representing the end of the current year.
-  - `totalMillisecondsInYear`: A number representing the total milliseconds in the current year.
-  - `millisecondsElapsedInYear`: A number representing the milliseconds elapsed since the start of the year.
-
-**Example:**
+**Example Response:**
 
 ```json
 {
@@ -65,9 +62,35 @@ Returns the percentage of the current year that has been completed as a string f
 }
 ```
 
-## Tests
+## Setup on Your Local Machine
 
-This package includes unit tests using Jest. To run the tests, make sure you have Jest installed and run:
+To set up the project on your local machine, follow these steps:
+
+Clone the repository:
+
+```bash
+git clone git@github.com:evrentan/year-in-percent.git
+```
+
+Navigate to the project directory:
+
+```bash
+cd year-in-percent
+```
+
+Install the dependencies:
+
+```bash
+npm install
+```
+
+Build the project:
+
+```bash
+npm run build
+```
+
+Test the project:
 
 ```bash
 npm test
@@ -75,7 +98,13 @@ npm test
 
 ## Contributing
 
-Contributions are welcome! Please feel free to submit a pull request or open an issue if you find a bug or have a suggestion for improvement.
+Contributions are welcome! Please follow these steps:
+
+1. Fork the repository.
+2. Create your feature branch (`git checkout -b feature/yourFeature`).
+3. Commit your changes (`git commit -m 'feat(Feature): Add some Feature'`).
+4. Push to the branch (`git push origin feature/yourFeature`).
+5. Open a pull request.
 
 ## License
 
