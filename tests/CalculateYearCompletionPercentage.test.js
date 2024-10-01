@@ -23,30 +23,30 @@ describe('CalculateYearCompletionPercentage', () => {
 
         const expectedPercentage = ((elapsedMilliseconds / totalMillisecondsInYear) * 100).toFixed(2);
 
-        expect(yearCompletion.getYearCompletionPercentage()).toBe(expectedPercentage);
+        expect(yearCompletion.getYearCompletionPercentage().percentageCompleted).toBe(expectedPercentage);
     });
 
     it('should return a string', () => {
         timekeeper.freeze(new Date(Date.UTC(2024, 5, 30, 12, 0, 0))); // June 30, 2024
-        const result = yearCompletion.getYearCompletionPercentage();
+        const result = yearCompletion.getYearCompletionPercentage().percentageCompleted;
         expect(typeof result).toBe('string');
     });
 
     it('should return a percentage between 0 and 100', () => {
         timekeeper.freeze(new Date(Date.UTC(2024, 5, 30, 12, 0, 0))); // June 30, 2024
-        const result = parseFloat(yearCompletion.getYearCompletionPercentage());
+        const result = parseFloat(yearCompletion.getYearCompletionPercentage().percentageCompleted);
         expect(result).toBeGreaterThanOrEqual(0);
         expect(result).toBeLessThanOrEqual(100);
     });
 
     it('should return 0% at the start of the year', () => {
         timekeeper.freeze(new Date(Date.UTC(2024, 0, 1, 0, 0, 0))); // January 1, 2024
-        expect(yearCompletion.getYearCompletionPercentage()).toBe('0.00');
+        expect(yearCompletion.getYearCompletionPercentage().percentageCompleted).toBe('0.00');
     });
 
     it('should return 100% at the end of the year', () => {
         timekeeper.freeze(new Date(Date.UTC(2024, 11, 31, 23, 59, 59, 999))); // December 31, 2024
-        expect(yearCompletion.getYearCompletionPercentage()).toBe('100.00');
+        expect(yearCompletion.getYearCompletionPercentage().percentageCompleted).toBe('100.00');
     });
 
     it('should handle leap years correctly', () => {
@@ -60,12 +60,12 @@ describe('CalculateYearCompletionPercentage', () => {
 
         const expectedPercentage = ((elapsedMilliseconds / totalMillisecondsInYear) * 100).toFixed(2);
 
-        expect(yearCompletion.getYearCompletionPercentage()).toBe(expectedPercentage);
+        expect(yearCompletion.getYearCompletionPercentage().percentageCompleted).toBe(expectedPercentage);
     });
 
     it('should return 50% on July 2', () => {
         timekeeper.freeze(new Date(Date.UTC(2024, 6, 2, 0, 0, 0))); // June 30, 2024
-        expect(yearCompletion.getYearCompletionPercentage()).toBe('50.00');
+        expect(yearCompletion.getYearCompletionPercentage().percentageCompleted).toBe('50.00');
     });
 
     it('should return a valid percentage for random dates', () => {
@@ -79,6 +79,6 @@ describe('CalculateYearCompletionPercentage', () => {
 
         const expectedPercentage = ((elapsedMilliseconds / totalMillisecondsInYear) * 100).toFixed(2);
 
-        expect(yearCompletion.getYearCompletionPercentage()).toBe(expectedPercentage);
+        expect(yearCompletion.getYearCompletionPercentage().percentageCompleted).toBe(expectedPercentage);
     });
 });

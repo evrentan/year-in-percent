@@ -1,7 +1,7 @@
 export default {
     collectCoverage: true,
     collectCoverageFrom: [
-        "src/services/CalculateYearCompletionProgress.js",
+        "src/services/CalculateYearCompletionPercentage.js",
         "!**/node_modules/**"
     ],
     coverageDirectory: "coverage",

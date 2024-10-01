@@ -30,31 +30,13 @@ import { CalculateYearCompletionPercentage } from 'year-in-percent';
 const yearCompletion = new CalculateYearCompletionPercentage();
 
 // Get the current year completion percentage
-const completionPercentage = yearCompletion.getYearCompletionPercentage();
+const result = yearCompletion.getYearCompletionPercentage();
 
-console.log(`Year Completion: ${completionPercentage}%`);
+console.log(result);
+console.log(`Year completion: ${result.percentageCompleted}%`);
 ```
 
-### Example
-
-To get the year completion percentage at a specific date:
-
-```javascript
-import timekeeper from 'timekeeper';
-import CalculateYearCompletionProgress from 'year-completion-progress';
-
-timekeeper.freeze(new Date('2024-06-30T12:00:00Z'));
-const yearCompletion = new CalculateYearCompletionProgress();
-const completionPercentage = yearCompletion.getYearPercentage();
-
-console.log(`Year Completion on June 30, 2024: ${completionPercentage}%`);
-
-timekeeper.reset();
-```
-
-## API
-
-### `CalculateYearCompletionPercentage`
+### Methods
 
 #### `getYearCompletionPercentage()`
 
@@ -62,7 +44,26 @@ Returns the percentage of the current year that has been completed as a string f
 
 **Returns:**
 
-- A string representing the percentage (e.g., `"50.00"`).
+- A JSON object with the following properties:
+  - `percentageCompleted`: A string representing the percentage (e.g., `"50.00"`).
+  - `now`: A `Date` object representing the current date and time.
+  - `startOfYear`: A `Date` object representing the start of the current year.
+  - `endOfYear`: A `Date` object representing the end of the current year.
+  - `totalMillisecondsInYear`: A number representing the total milliseconds in the current year.
+  - `millisecondsElapsedInYear`: A number representing the milliseconds elapsed since the start of the year.
+
+**Example:**
+
+```json
+{
+    "percentageCompleted": "75.08",
+    "now": "2024-10-01T18:35:52.654Z",
+    "startOfYear": "2024-01-01T00:00:00.000",
+    "endOfYear": "2024-12-31T23:59:59.000Z",
+    "totalMillisecondsInYear": 31622399000,
+    "millisecondsElapsedInYear": 23740552654
+}
+```
 
 ## Tests
 
