@@ -1,7 +1,7 @@
 # Year In Percent
 
-![NPM Version](https://img.shields.io/npm/v/quote-guru)
-![License](https://img.shields.io/npm/l/quote-guru)
+![NPM Version](https://img.shields.io/npm/v/year-in-percent)
+![License](https://img.shields.io/npm/l/year-in-percent)
 
 
 Year In Percent is a lightweight, easy-to-use library that provides the current year's completion percentage. It calculates the percentage of the year that has passed based on the current date and time. Perfect for adding a touch of progress tracking to your apps, websites, or projects!
