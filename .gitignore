@@ -1,0 +1,44 @@
+# Node.js dependencies
+node_modules/
+
+# Logs
+npm-debug.log
+*.log
+
+# OS-specific files
+.DS_Store
+
+# Test coverage
+coverage/
+
+# Distribution files
+dist/
+
+# Documentation
+docs/
+
+# IDE-specific files
+.idea/
+
+# Environment variables
+.env
+
+# Build output
+build/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Yarn integrity file
+yarn-error.log
+
+# Ignore lock files
+package-lock.json
+yarn.lock
+
+# Ignore npm cache
+.npm
+
+# Ignore tgz files
+*.tgz

@@ -1,0 +1,47 @@
+{
+  "name": "year-in-percent",
+  "version": "1.0.0",
+  "description": "year-in-percent is a lightweight npm package that calculates and displays the percentage of the year that has been completed.",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "babel src --out-dir dist",
+    "test": "jest --coverage",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evrentan/year-in-percent.git"
+  },
+  "files": [
+    "dist/",
+    "src/"
+  ],
+  "keywords": [
+    "year",
+    "percentage",
+    "progress",
+    "year-progress",
+    "yearly",
+    "year-completion",
+    "year-stats",
+    "year progress",
+    "year completion",
+    "year stats"
+  ],
+  "author": "Evren Tan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/evrentan/year-in-percent/issues"
+  },
+  "homepage": "https://github.com/evrentan/year-in-percent#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.25.6",
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.4",
+    "jest": "^29.7.0"
+  },
+  "dependencies": {
+    "timekeeper": "^2.3.1"
+  }
+}
